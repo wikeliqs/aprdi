@@ -668,6 +668,7 @@
 		
 		<!-- JQUERY STEP -->
 		<script src="<?php echo base_url(); ?>assets/registration/js/jquery.steps.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
 
 		<!-- DATE-PICKER -->
 		
@@ -788,6 +789,16 @@
 		  
 	  }
 		
+		
+	 
+form.validate({
+    errorPlacement: function errorPlacement(error, element) { element.before(error); },
+    rules: {
+        confirm: {
+            equalTo: "#password"
+        }
+    }
+});
 		
      $.ajax({
        type: "POST",
