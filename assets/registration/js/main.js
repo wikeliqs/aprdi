@@ -39,7 +39,46 @@ function Photo(input) {
            
         }
 		
-		
+function Photoprsh(input) {
+	
+		var extension = input.files[0].name.split('.').pop().toLowerCase(),  //file extension from input file
+            isSuccess = fileTypes.indexOf(extension) > -1;  //is extension in acceptable types
+			var fsize = input.files[0].size;
+			
+			alert(fsize);
+			
+			if (isSuccess) {  
+				if(fsize<2000000){
+			
+					if (input.files && input.files[0]) {
+						var reader = new FileReader();
+		 
+						reader.onload = function (e) {
+						
+							$('#photo_viewprsh').attr('src', e.target.result);
+						};
+
+						reader.readAsDataURL(input.files[0]);
+					}
+				}else {
+					alert("File harus berukuran di bawah 2 mb");
+					$('#photo_viewprsh').attr('src','http://www.waperd.or.id/FileUpload/no_image.gif');
+					$('#photoprsh').val('');
+					
+				}
+			}
+			else {  
+				  alert("Harap menggunakan format '.jpg' atau '.jpeg'");
+				  $('#photo_viewprsh').attr('src','http://www.waperd.or.id/FileUpload/no_image.gif');
+				 $('#photoprsh').val('');
+				
+			}
+	
+ 
+		 
+           
+        }	
+	
 function Ktp(input) {
 	
 		var extension = input.files[0].name.split('.').pop().toLowerCase(),  //file extension from input file
@@ -122,19 +161,13 @@ function SK(input) {
 
 $(function(){ 
 
-
-		if($('#tipe_daftar').val()==0){
-		var	form = $("#wizard-pribadi");
-		}else{
-		var   form = $("#wizard-prsh ");
-		  
-		}
-var validator = form.validate({
+  var validator = $("#wizard-pribadi").validate({
 		  rules: {
-    password: "required",
+    "#password": "required",
     password_again: {
       equalTo: "#password"
-    }
+    },
+	faq_prsh: "required",
   }
 ,
 
@@ -151,13 +184,14 @@ var validator = form.validate({
 				// element.parents('.form-holder').find('.err-radio').html(error.html());
             } else if (type === "checkbox") {
                 // custom placement
-                error.insertAfter(element).wrap('<li/>');
+                error.insertAfter(element.parents('.form-holder').find('.checkbox-circle'));
             } else {
                 error.insertAfter(element).wrap('<div/>');
             }
         },
 	
 });
+
 
 jQuery.extend(jQuery.validator.messages, {
     required: "Wajib diisi.",
@@ -192,7 +226,8 @@ jQuery.extend(jQuery.validator.messages, {
         enableAllSteps: true,
         onStepChanging: function (event, currentIndex, newIndex) { 
  	 
-	 // alert(currentIndex);
+	
+	 
 		 var lanjut = true;
  $('.step'+currentIndex).each(function() {
 	 
@@ -205,7 +240,7 @@ lanjut = false;
 	 
  });
 	
-return lanjut;
+		if(lanjut==true){
 
  
             if ( newIndex === 1 ) { 
@@ -288,10 +323,10 @@ return lanjut;
 
 
 	     
+		}
 
 
-
-            return true; 
+          return lanjut;
         },
         labels: {
             finish: "Submit",
@@ -334,7 +369,7 @@ return lanjut;
 	    dp1.formatDate("dd/mm/yyyy");  */ 
 })
 
- $( "a:contains('Submit')" ).click(function () {
+/*  $( "a:contains('Submit')" ).click(function () {
 	  
 	  if($('#tipe_daftar').val()==0){
 			var  form = $("#wizard-pribadi").serialize();
@@ -360,16 +395,59 @@ return lanjut;
      event.preventDefault();
      return false; 
 	  
-	}); 
+	});  */
 
 $(function(){
+	
+		var validator_prsh = $("#wizard-perusahaan").validate({
+		  rules: {
+			"#password_prsh": "required",
+			password_again_prsh: {
+			  equalTo: "#password_prsh"
+			},
+			faq: "required",
+		  },errorPlacement: function (error, element) {
+					var type = $(element).attr("type");
+					var id = $(element).attr("id");
+					if (type === "radio") {
+						// console.log(error.html());
+						// custom placement
+						// error.insertAfter(element).insertAfter('.err-radio');
+						error.insertAfter(element.parents('.form-holder').find('.checkbox-circle'));
+						// console.log(element.parents('.form-holder').find('.err-radio'));
+						// element.parents('.form-holder').find('.err-radio').html(error.html());
+					} else if (type === "checkbox") {
+						// custom placement
+						error.insertAfter(element.parents('.form-holder').find('.checkbox-circle'));
+					} else {
+						error.insertAfter(element).wrap('<div/>');
+					}
+				},
+			
+});
+	
 	$(".wizard-prsh").steps({
         headerTag: "h4",
         bodyTag: "section",
         transitionEffect: "fade",
         enableAllSteps: true,
         onStepChanging: function (event, currentIndex, newIndex) { 
- 	 // alert(newIndex );
+ 		
+	
+
+ 
+ 
+  var lanjut = true;
+ $('.cek'+currentIndex).each(function() {
+	 
+	if(!validator_prsh.element(this)){
+lanjut = false;
+
+	}	
+	validator_prsh.element(this);
+	 
+	 
+ });
  
  
 	    if ( newIndex === 1 ) {
@@ -399,13 +477,46 @@ $(function(){
 
 
 
-            return true; 
+            return lanjut; 
         },
         labels: {
             finish: "Submit",
             next: "Continue",
             previous: "Back"
-        }
+        },onFinishing: function (event, currentIndex) {
+			
+		
+			
+			 var lanjut = true;
+				$('.cek'+currentIndex).each(function() {
+	 
+	if(!validator_prsh.element(this)){
+lanjut = false;
+
+	}	
+	validator_prsh.element(this);
+	 
+	 
+ });
+	
+return lanjut;
+
+
+
+
+ 
+
+ 
+
+},onFinished: function (event, currentIndex) {
+	
+var	form = $("#wizard-perusahaan ").submit();
+	
+	 
+	
+	
+	
+}
     });
     // Custom Button Jquery Steps
     $('.forward').click(function(){

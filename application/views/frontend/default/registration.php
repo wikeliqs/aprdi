@@ -22,7 +22,7 @@
 			<div class="image-holder">
 				<img src="<?php echo base_url(); ?>assets/registration/images/form-wizard.png" alt="">
 			</div>
-            <form style="display:none" action="<?php echo site_url('login/register'); ?>" id="wizard-pribadi" action="">
+            <form style="display:none" action="<?php echo site_url('login/register'); ?>" id="wizard-pribadi" enctype="multipart/form-data" method="post">
             	<div class="form-header">
             		<a href="#">#OnlineClass Waperd</a>
             		<h3>Register for the course online</h3>
@@ -137,18 +137,18 @@
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
 	                    </div>	
-						 <div class="form-row" style="margin-bottom: 50px;">
+						 <!--div class="form-row" style="margin-bottom: 50px;">
 	                    	<label for="">
 	                    		Pendidikan Reksa Dana
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<div class="checkbox-circle">
 									<label class="male">
-										<input type="radio" name="data[rdc]" required value="1" class="step2" > Ya<br>
+										<input type="radio" name="data[rdc]"  value="1" class="" > Ya<br>
 										<span class="checkmark"></span>
 									</label>
 									<label class="female">
-										<input type="radio" name="data[rdc]" class="step2" value="0"> Tidak<br>
+										<input type="radio" name="data[rdc]" class="" value="0"> Tidak<br>
 										<span class="checkmark"></span>
 									</label>
 									 
@@ -160,9 +160,9 @@
 	                    		Lembaga Pendidikan Reksa Dana
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" name="data[nm_rdc]" required  class="form-control step2">
+	                    		<input type="text" name="data[nm_rdc]"   class="form-control ">
 	                    	</div>
-	                    </div>	
+	                    </div-->	
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		No. KTP
@@ -171,18 +171,7 @@
 	                    		<input type="text" name="data[no_ktp]" required  class="form-control step2">
 	                    	</div>
 	                    </div>	
-	                    <div class="form-row" style="margin-bottom: 3.4vh">
-	                    	<label for="">
-	                    		Kewarganegaraan 
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<select name="data[kwn]" required id="" class="form-control step2">
-									<option value="canvas" class="option">WNI</option>
-									<option value="svg" class="option">WNA</option>
-								</select>
-								<i class="zmdi zmdi-caret-down"></i>
-	                    	</div>
-	                    </div>	
+	                     
 	                   	
 	                </section>
 					<!-- SECTION 4 -->
@@ -243,7 +232,7 @@
 	                    		RT / RW
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control step5" required value="000/000" name="data[rtrw]" placeholder="">
+	                    		<input type="text" class="form-control step5" id="rtrw"  required value="000/000" name="data[rtrw]" placeholder="">
 	                    	</div>
 	                    </div>	
                      	<div class="form-row">
@@ -426,7 +415,7 @@
 	                    		Password
 	                    	</label>
 	                    	<div class="form-holder">
-								<input id="password" name="password" class="form-control step9" type="password"/>
+								<input id="password" name="data[password]" class="form-control step9" type="password"/>
 	                    		 
 	                    	</div>
 	                    </div>	
@@ -435,7 +424,7 @@
 	                    		Konfirmasi Password
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		 
+													
 								<input type="password" class="left form-control step9" id="password_again" name="password_again" />
 	                    	</div>
 	                    </div>	
@@ -449,12 +438,14 @@
 									<div class="g-recaptcha" required data-sitekey="6Leq2SYTAAAAAC6UjI2YaXuV2G9haYnBa7bycVNe"></div>
 								</div>
 	                    	</div>
-	                    </div>	
+	                    </div>
+						<div class="form-holder">						
 	                    <div class="checkbox-circle" style="margin-bottom: 48px;">
 							<label>
-								<input type="checkbox" required class="step9" >I agree all statement in Terms & Conditions
+								<input type="checkbox" required name="faq" class="step9 " >I agree all statement in Terms & Conditions
 								<span class="checkmark"></span>
 							</label>
+						</div> 	
 						</div> 	
 	                    
 							
@@ -467,7 +458,7 @@
 			
 			
 			
-			<form id="wizard-perusahaan" action="<?php echo site_url('login/register'); ?>" action="" style="display:none">
+			<form id="wizard-perusahaan" action="<?php echo site_url('login/register_prsh'); ?>" enctype="multipart/form-data" method="post" style="display:none">
             	<div class="form-header">
             		<a href="#">#OnlineClass Waperd</a>
             		<h3>Register for the course online</h3>
@@ -505,7 +496,7 @@
 	                    		Nama Perusahaan
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[nm_type]" placeholder="">
+	                    		<input type="text" class="form-control cek1" required name="data[nm_type]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -513,7 +504,7 @@
 	                    		Nama Gedung
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[nm_gedung]" value="" placeholder="">
+	                    		<input type="text" class="form-control cek1" required name="data[nm_gedung]" value="" placeholder="">
 	                    	</div>
 	                    </div>	
                      	<div class="form-row">
@@ -521,7 +512,7 @@
 	                    		Lantai 
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[lantai]" placeholder="">
+	                    		<input type="text" class="form-control cek1" required name="data[lantai]" placeholder="">
 	                    	</div>
 	                    </div>
 						<div class="form-row">
@@ -529,7 +520,7 @@
 	                    		Jalan 
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[alamat]" placeholder="">
+	                    		<input type="text" class="form-control cek1" required name="data[alamat]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -537,7 +528,7 @@
 	                    		Kode Pos 
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" id="kd_pos" name="data[kd_pos]" value="000/000" placeholder="">
+	                    		<input type="text" class="form-control cek1" required id="kd_pos" name="data[kd_pos]" value="000/000" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -545,7 +536,7 @@
 	                    		Kota / Kabupaten
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[kabupaten]" placeholder="">
+	                    		<input type="text" class="form-control cek1" required name="data[kabupaten]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                     
@@ -558,7 +549,7 @@
 	                    		Upload Pas Photo Berwarna
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="file" class="form-control" name="data[photo]" placeholder="">
+	                    		<input type="file" onchange="Photoprsh(this);" class="form-control cek2" required name="data[photo]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -566,7 +557,7 @@
 	                    		Preview
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<img class="col-md-6" id="blah" src="http://placehold.it/180"   />
+	                    		<img class="col-md-6" id="photo_viewprsh" src="http://www.waperd.or.id/FileUpload/no_image.gif"   />
 	                    	</div>
 	                    </div>	
                      	 
@@ -579,7 +570,7 @@
 	                    		Nama Contact
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="tel" name="data[pic]" pattern="\(\d\d\d\)-\d\d\d\d\d\d\d" name="telepon" placeholder="(999)-99999999" required class="form-control"  >
+	                    		<input type="text" name="data[pic]" name="telepon"   required class="form-control cek3"  >
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -587,7 +578,7 @@
 	                    		Jabatan
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" name="data[jabatan]" class="form-control" placeholder="Ex. Intro to physic">
+	                    		<input type="text" name="data[jabatan]" required class="form-control cek3"  >
 	                    	</div>
 	                    </div>	
                      	<div class="form-row">
@@ -595,7 +586,7 @@
 	                    		 Telepon
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[tlp]" placeholder="Ex. 3679 or 33fa, 4295">
+	                    		<input type="text" class="form-control cek3" required name="data[tlp]"  >
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -603,7 +594,7 @@
 	                    		Fax
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[fax]" placeholder="Ex. 3679 or 33fa, 4295">
+	                    		<input type="text" class="form-control cek3" required name="data[fax]"  >
 	                    	</div>
 	                    </div>	
 	                   <div class="form-row">
@@ -611,7 +602,7 @@
 	                    		No, HP
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[hp]" placeholder="Ex. 3679 or 33fa, 4295">
+	                    		<input type="text" class="form-control cek3" required name="data[hp]"  >
 	                    	</div>
 	                    </div>
 	                </section>
@@ -624,7 +615,7 @@
 	                    		Alamat Email
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="email" name="data[email]" required class="form-control" placeholder="Email">
+	                    		<input type="email" name="data[email]" required class="form-control cek4" placeholder="Email">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -632,7 +623,8 @@
 	                    		Password
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="password" id="password" required name="data[password]" class="form-control" placeholder="Password">
+								<input id="password_prsh" name="data[password]" class="form-control step9" required type="password"/>
+	                    		 
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -640,7 +632,8 @@
 	                    		Konfirmasi Password
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="password" name="password_confirm" class="form-control" placeholder="Password">
+													
+								<input type="password" class="left form-control step9" id="password_again" required name="password_again_prsh" />
 	                    	</div>
 	                    </div>	
 						
@@ -650,15 +643,17 @@
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<div class="checkbox-circle" style="margin-bottom: 48px;">
-									<div class="g-recaptcha" data-sitekey="6Leq2SYTAAAAAC6UjI2YaXuV2G9haYnBa7bycVNe"></div>
+									<div class="g-recaptcha step9" required data-sitekey="6Leq2SYTAAAAAC6UjI2YaXuV2G9haYnBa7bycVNe"></div>
 								</div>
 	                    	</div>
 	                    </div>	
+						<div class="form-holder">			
 	                    <div class="checkbox-circle" style="margin-bottom: 48px;">
 							<label>
-								<input type="checkbox"  >I agree all statement in Terms & Conditions
+								<input type="checkbox" class="cek4" name="faq_prsh" required >I agree all statement in Terms & Conditions
 								<span class="checkmark"></span>
 							</label>
+						</div> 	
 						</div> 	
 	                    
 							
@@ -678,6 +673,7 @@
 		<script src="<?php echo base_url(); ?>assets/registration/js/jquery.steps.js"></script>
 		<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
 		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js"></script>
 
 
 		<!-- DATE-PICKER -->
@@ -713,6 +709,8 @@
  
 $(document).ready(function(){
 	
+	$("#rtrw").inputmask({"mask": "999/999"});
+	 $('.phone_with_ddd').mask('(00) 0000-0000');
 	
     $(document).ajaxStart(function(){
         $("#wait").css("display", "block");
