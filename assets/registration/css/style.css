@@ -524,4 +524,9 @@ textarea.form-control {
   .actions li:first-child a {
     margin-bottom: 20px; } }
 
+	  .error {
+      color: #ffea03;
+      
+   }
+	
 /*# sourceMappingURL=style.css.map */

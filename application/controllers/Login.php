@@ -206,7 +206,7 @@ class Login extends CI_Controller {
 		  $user_id = $this->user_model->register_user($data);
 			 echo $this->db->last_query();
 		
-        $data['first_name'] = html_escape($data['first_name']);
+       /*  $data['first_name'] = html_escape($data['first_name']);
         $data['last_name']  = html_escape($data['first_name']);
         $data['kelamin']  = html_escape($data['first_name']);
         $data['marital']  = html_escape($data['first_name']);
@@ -257,7 +257,7 @@ class Login extends CI_Controller {
 		$config_photo['encrypt_name'] = TRUE;
 		$config_ktp['encrypt_name'] = TRUE;
 		$this->load->library('upload', $config_photo);
-		$this->load->library('upload', $config_ktp);
+		$this->load->library('upload', $config_ktp); */
      
 	  
 				// $mesg = $this->load->view('email/verification.php',$data,true);

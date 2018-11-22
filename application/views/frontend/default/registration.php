@@ -61,7 +61,8 @@
 	                    		Nama Sesuai KTP
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control"  name="data[nm_ktp]" placeholder="">
+	                    		<input type="text" class="form-control step1"  required id="nm_ktp"  name="data[nm_ktp]" placeholder="">
+								<span class="checkmark_ktp"></span>
 	                    	</div>
 	                    </div>	
 						<div class="form-row">
@@ -69,7 +70,8 @@
 	                    		Nama Panggilan
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control"  name="data[first_name]" placeholder="">
+	                    		<input type="text" class="form-control step1" id="first_name" required  name="data[first_name]" placeholder="">
+								<span class="checkmark_nik"></span>
 	                    	</div>
 	                    </div>
 	                    <div class="form-row">
@@ -77,17 +79,17 @@
 	                    		Jenis Kelamin
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<div class="checkbox-circle">
+	                    		<div class="checkbox-circle" required>
 									<label class="male">
-										<input type="radio" name="data[kelamin]" value="male" checked> Laki-Laki<br>
+										<input type="radio" name="data[kelamin]" id="kelamin"  required   class="step1" value="male"  > Laki-Laki<br>
 										<span class="checkmark"></span>
 									</label>
 									<label class="female">
-										<input type="radio" name="data[kelamin]" value="female"> Perempuan<br>
+										<input type="radio" name="data[kelamin]" id="kelamin"  required class="step1" value="female"> Perempuan<br>
 										<span class="checkmark"></span>
 									</label>
-									 
-								</div>
+								
+								</div>	<span class="err-radio"></span> 
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -96,16 +98,16 @@
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<div class="checkbox-circle">
-									<label class="male">
-										<input type="radio" name="data[marital]" value="male" checked> Kawin<br>
+									<label class="male" >
+										<input type="radio" name="data[marital]" id="marital" required  class="step1" value="male"  > Kawin<br>
 										<span class="checkmark"></span>
 									</label>
 									<label class="female">
-										<input type="radio" name="data[marital]" value="female"> Belum Kawin<br>
+										<input type="radio" name="data[marital]" id="marital"  required  class="step1" value="female"> Belum Kawin<br>
 										<span class="checkmark"></span>
 									</label>
 									 
-								</div>
+								</div> <span class="err-radio"></span> 
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -113,7 +115,7 @@
 	                    		Tgl. Lahir
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" name="data[tgl_lahir]" readonly data-view="years" class="form-control datepicker-here" data-date-format="dd-mm-yyyy" data-language='en'  id="dp1">
+	                    		<input type="text" name="data[tgl_lahir]"   required readonly data-view="years" class="form-control datepicker-here step1" data-date-format="dd-mm-yyyy" data-language='en'  id="dp1">
 	                    	</div>
 	                    </div>		
 	                </section>
@@ -127,7 +129,7 @@
 	                    		Pendidikan Terakhir
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<select name="data[pendidikan]" id="" class="form-control">
+	                    		<select name="data[pendidikan]" id="" required class="form-control step2">
 									<option value="canvas" class="option">SMA</option>
 									<option value="svg" class="option">D3</option>
 									<option value="svg" class="option">S1</option>
@@ -142,11 +144,11 @@
 	                    	<div class="form-holder">
 	                    		<div class="checkbox-circle">
 									<label class="male">
-										<input type="radio" name="data[rdc]" value="1" checked> Ya<br>
+										<input type="radio" name="data[rdc]" required value="1" class="step2" > Ya<br>
 										<span class="checkmark"></span>
 									</label>
 									<label class="female">
-										<input type="radio" name="data[rdc]" value="0"> Tidak<br>
+										<input type="radio" name="data[rdc]" class="step2" value="0"> Tidak<br>
 										<span class="checkmark"></span>
 									</label>
 									 
@@ -158,7 +160,7 @@
 	                    		Lembaga Pendidikan Reksa Dana
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" name="data[nm_rdc]" class="form-control">
+	                    		<input type="text" name="data[nm_rdc]" required  class="form-control step2">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -166,7 +168,7 @@
 	                    		No. KTP
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" name="data[no_ktp]" class="form-control">
+	                    		<input type="text" name="data[no_ktp]" required  class="form-control step2">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row" style="margin-bottom: 3.4vh">
@@ -174,7 +176,7 @@
 	                    		Kewarganegaraan 
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<select name="data[kwn]" id="" class="form-control">
+	                    		<select name="data[kwn]" required id="" class="form-control step2">
 									<option value="canvas" class="option">WNI</option>
 									<option value="svg" class="option">WNA</option>
 								</select>
@@ -191,7 +193,7 @@
 	                    		Upload Pas Photo Berwarna
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input onchange="readURL(this);" type="file" id="photo" name="data[photo]" class="form-control" placeholder="">
+	                    		<input onchange="Photo(this);" type="file" required id="photo" name="data[photo]" class="form-control step3" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -212,7 +214,7 @@
 	                    		Upload KTP
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="file"  name="data[file_ktp]" class="form-control" placeholder="">
+	                    		<input type="file" onchange="Ktp(this);" id="ktp"   name="data[file_ktp]" required class="form-control step4" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -220,7 +222,7 @@
 	                    		Preview
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<img class="col-md-6" id="blah" src="http://www.waperd.or.id/FileUpload/no_image.gif"   />
+	                    		<img class="col-md-6" id="ktp_view" src="http://www.waperd.or.id/FileUpload/no_image.gif"   />
 	                    	</div>
 	                    </div>	
                      	 
@@ -233,7 +235,7 @@
 	                    		Alamat Tinggal Sekarang
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[alamat_rumah]" placeholder="">
+	                    		<input type="text" class="form-control step5" required name="data[alamat_rumah]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -241,7 +243,7 @@
 	                    		RT / RW
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" value="000/000" name="data[rtrw]" placeholder="">
+	                    		<input type="text" class="form-control step5" required value="000/000" name="data[rtrw]" placeholder="">
 	                    	</div>
 	                    </div>	
                      	<div class="form-row">
@@ -249,7 +251,7 @@
 	                    		Kode Pos
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" id="kode_pos" name="data[kode_pos]" placeholder="">
+	                    		<input type="text" class="form-control step5" required id="kode_pos" name="data[kode_pos]" placeholder="">
 	                    	</div>
 	                    </div>
 						<div class="form-row">
@@ -257,7 +259,7 @@
 	                    		Kelurahan
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" id="kelurahan" name="data[kelurahan]"  placeholder="">
+	                    		<input type="text" class="form-control step5 " required id="kelurahan" name="data[kelurahan]"  placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -265,7 +267,7 @@
 	                    		Kecamatan
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" id="kecamatan" name="data[kecamatan]" placeholder="">
+	                    		<input type="text" class="form-control step5" required id="kecamatan" name="data[kecamatan]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -273,7 +275,7 @@
 	                    		Kota / Kabupaten
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" id="kabupaten" name="data[kabupaten]" placeholder="">
+	                    		<input type="text" class="form-control step5" required id="kabupaten" name="data[kabupaten]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                     
@@ -286,7 +288,7 @@
 	                    		SK Waperd
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="file" name="data[sk_waperd]" class="form-control" placeholder="">
+	                    		<input type="file" onchange="SK(this);" id="sk" name="data[sk_waperd] " required class="form-control step6" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -294,7 +296,7 @@
 	                    		Preview
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<img class="col-md-6" id="blah" src="http://www.waperd.or.id/FileUpload/no_image.gif"   />
+	                    		<img class="col-md-6" id="sk_view" src="http://www.waperd.or.id/FileUpload/no_image.gif"   />
 	                    	</div>
 	                    </div>	
                      	 
@@ -309,7 +311,8 @@
 	                    		Nama Perusahaan
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<select name="data[nm_perusahaan]" id="type_pendaftaran" class="form-control selectpicker" data-live-search="true" >
+	                    		<select name="data[nm_perusahaan]" required id="type_pendaftaran" class="form-control step7 selectpicker" data-live-search="true" >
+									<option class='option'> Pilih Data </option>
 								<?php
 																						
 								foreach ($prsh_assets as $row)
@@ -328,7 +331,7 @@
 	                    		Nama Gedung
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" id="nm_gedung" class="form-control" name="data[alamat_perusahaan]" value="000/000" placeholder="">
+	                    		<input type="text" id="nm_gedung" required class="form-control step7" name="data[alamat_perusahaan]" value="000/000" placeholder="">
 	                    	</div>
 	                    </div>	
                      	<div class="form-row">
@@ -336,7 +339,7 @@
 	                    		Lantai 
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" id="lantai" class="form-control" name="data[nm_perusahaan]" placeholder="">
+	                    		<input type="text" id="lantai" required class="form-control step7" name="data[nm_perusahaan]" placeholder="">
 	                    	</div>
 	                    </div>
 						<div class="form-row">
@@ -344,7 +347,7 @@
 	                    		Jalan 
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" id="alamat" class="form-control" name="data[alamat_perusahaan]" placeholder="">
+	                    		<input type="text" id="alamat" required class="form-control step7" name="data[alamat_perusahaan]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -352,7 +355,7 @@
 	                    		Kode Pos 
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" id="kd_pos" class="form-control" name="data[kode_pos_perusahaan]" placeholder="">
+	                    		<input type="text" id="kd_pos" required class="form-control step7" name="data[kode_pos_perusahaan]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -360,7 +363,7 @@
 	                    		Kota / Kabupaten
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" id="kabupaten_prsh" class="form-control" name="data[kota_perusahaan]" placeholder="">
+	                    		<input type="text" id="kabupaten_prsh" required class="form-control step7" name="data[kota_perusahaan]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                     
@@ -374,7 +377,7 @@
 	                    		 Telp. Kantor
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[tlp_perusahaan]" placeholder="">
+	                    		<input type="text" class="form-control step8" required name="data[tlp_perusahaan]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -382,7 +385,7 @@
 	                    		 Fax
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control"name="data[fax_perusahaan]" placeholder="">
+	                    		<input type="text" class="form-control step8" required name="data[fax_perusahaan]" placeholder="">
 	                    	</div>
 	                    </div>	
                      	<div class="form-row">
@@ -390,7 +393,7 @@
 	                    		 Handphone
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[hp]" placeholder="">
+	                    		<input type="text" class="form-control step8" required name="data[hp]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -398,7 +401,7 @@
 	                    		 Telp. Rumah
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" name="data[tlp_rumah]" placeholder="">
+	                    		<input type="text" class="form-control step8" required name="data[tlp_rumah]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                   
@@ -412,15 +415,19 @@
 	                    		Alamat Email
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="email" class="form-control" name="data[email]" placeholder="">
+	                    		<input type="email" class="form-control step9" required name="data[email]" placeholder="">
 	                    	</div>
 	                    </div>	
+						
+					 
+						
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Password
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="password" class="form-control" name="data[password]" placeholder="">
+								<input id="password" name="password" class="form-control step9" type="password"/>
+	                    		 
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -428,7 +435,8 @@
 	                    		Konfirmasi Password
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="password" class="form-control" name="data[password]" placeholder="">
+	                    		 
+								<input type="password" class="left form-control step9" id="password_again" name="password_again" />
 	                    	</div>
 	                    </div>	
 						
@@ -438,13 +446,13 @@
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<div class="checkbox-circle" style="margin-bottom: 48px;">
-									<div class="g-recaptcha" data-sitekey="6Leq2SYTAAAAAC6UjI2YaXuV2G9haYnBa7bycVNe"></div>
+									<div class="g-recaptcha" required data-sitekey="6Leq2SYTAAAAAC6UjI2YaXuV2G9haYnBa7bycVNe"></div>
 								</div>
 	                    	</div>
 	                    </div>	
 	                    <div class="checkbox-circle" style="margin-bottom: 48px;">
 							<label>
-								<input type="checkbox" checked>I agree all statement in Terms & Conditions
+								<input type="checkbox" required class="step9" >I agree all statement in Terms & Conditions
 								<span class="checkmark"></span>
 							</label>
 						</div> 	
@@ -616,7 +624,7 @@
 	                    		Alamat Email
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="email" name="data[email]" class="form-control" placeholder="Email">
+	                    		<input type="email" name="data[email]" required class="form-control" placeholder="Email">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -624,7 +632,7 @@
 	                    		Password
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="password" name="data[password]" class="form-control" placeholder="Password">
+	                    		<input type="password" id="password" required name="data[password]" class="form-control" placeholder="Password">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -632,7 +640,7 @@
 	                    		Konfirmasi Password
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="password" name="data[password]" class="form-control" placeholder="Password">
+	                    		<input type="password" name="password_confirm" class="form-control" placeholder="Password">
 	                    	</div>
 	                    </div>	
 						
@@ -648,7 +656,7 @@
 	                    </div>	
 	                    <div class="checkbox-circle" style="margin-bottom: 48px;">
 							<label>
-								<input type="checkbox" checked>I agree all statement in Terms & Conditions
+								<input type="checkbox"  >I agree all statement in Terms & Conditions
 								<span class="checkmark"></span>
 							</label>
 						</div> 	
@@ -669,6 +677,8 @@
 		<!-- JQUERY STEP -->
 		<script src="<?php echo base_url(); ?>assets/registration/js/jquery.steps.js"></script>
 		<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
 
 		<!-- DATE-PICKER -->
 		
@@ -701,8 +711,19 @@
 
 <script>
  
- $(document).ready(function() {
+$(document).ready(function(){
 	
+	
+    $(document).ajaxStart(function(){
+        $("#wait").css("display", "block");
+    });
+    $(document).ajaxComplete(function(){
+        $("#wait").css("display", "none");
+    });
+    
+});
+ $(document).ready(function() {
+  
 	$('#kode_pos').keyup(function () {
            
        $.ajax({
@@ -780,40 +801,7 @@
 	  
 	});  
 	  
-  $( "a:contains('Submit')" ).click(function () {
-	  
-	  if($('#tipe_daftar').val()==0){
-	  form = $("#wizard-pribadi").serialize();
-	  }else{
-		   form = $("#wizard-prsh ").serialize();
-		  
-	  }
-		
-		
-	 
-form.validate({
-    errorPlacement: function errorPlacement(error, element) { element.before(error); },
-    rules: {
-        confirm: {
-            equalTo: "#password"
-        }
-    }
-});
-		
-     $.ajax({
-       type: "POST",
-       url: "<?php  echo site_url('Login/register'); ?>",
-       data: form,
-
-       success: function(response){
-           alert(response); //Unterminated String literal fixed
-       }
-
-     });
-     event.preventDefault();
-     return false; 
-	  
-	});  
+  
 	  
 	  
 
