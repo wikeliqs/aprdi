@@ -199,6 +199,13 @@ class Login extends CI_Controller {
 			// redirect(base_url());
 	}
 	
+    public function register_prsh() {
+		
+		  $data = $_POST['data'];;
+		  var_dump($data);
+		
+	}
+	
     public function register() {
 		
 		  $data = $_REQUEST['data'];
@@ -206,7 +213,7 @@ class Login extends CI_Controller {
 		  $user_id = $this->user_model->register_user($data);
 			 echo $this->db->last_query();
 		
-       /*  $data['first_name'] = html_escape($data['first_name']);
+         $data['first_name'] = html_escape($data['first_name']);
         $data['last_name']  = html_escape($data['first_name']);
         $data['kelamin']  = html_escape($data['first_name']);
         $data['marital']  = html_escape($data['first_name']);
@@ -239,7 +246,7 @@ class Login extends CI_Controller {
         $data['password']  = sha1($this->input->post('password'));
 		$data['kd_verify'] = random_string('numeric', 6);
 		
-        $data['wishlist'] = json_encode(array()); 
+        $data['wishlist'] = json_encode(array());
         $data['watch_history'] = json_encode(array());
         $social_links = array(
             'facebook' => "",
@@ -249,15 +256,15 @@ class Login extends CI_Controller {
         $data['social_links'] = json_encode($social_links);
         $data['role_id']  = 2;
 		// var_dump($data);
-		$config_photo['upload_path']   = './uploads/user_image/photo/'; 
-		$config_ktp['upload_path']   = './uploads/user_image/ktp/'; 
-		$config_photo['allowed_types'] = 'gif|jpg|png'; 
-		$config_ktp['allowed_types'] = 'gif|jpg|png'; 
+		$config_photo['upload_path']   = './uploads/user_image/photo/';
+		$config_ktp['upload_path']   = './uploads/user_image/ktp/';
+		$config_photo['allowed_types'] = 'gif|jpg|png';
+		$config_ktp['allowed_types'] = 'gif|jpg|png';
 		// $config['max_size']      = 1024;
 		$config_photo['encrypt_name'] = TRUE;
 		$config_ktp['encrypt_name'] = TRUE;
 		$this->load->library('upload', $config_photo);
-		$this->load->library('upload', $config_ktp); */
+		$this->load->library('upload', $config_ktp);
      
 	  
 				// $mesg = $this->load->view('email/verification.php',$data,true);

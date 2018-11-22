@@ -1,1 +1,4 @@
 /application/config/database.php
+/.htaccess
+/application/config/config.php
+/.idea

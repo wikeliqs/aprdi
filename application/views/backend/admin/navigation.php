@@ -2,7 +2,7 @@
     <header class="logo-env">
         <!-- logo -->
         <div class="logo">
-            <a href="index.html">
+            <a href="<?php echo site_url('admin/dashboard') ?>">
                 <img src="<?php echo base_url().'assets/backend/aprdi.png'; ?>" width="120" alt="" />
             </a>
         </div>
