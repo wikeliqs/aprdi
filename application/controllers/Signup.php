@@ -26,7 +26,7 @@ class Signup extends CI_Controller {
         // $this->load->view('frontend/default/index', $page_data);
         $this->load->view('frontend/default/registration', $page_data);
     }
-
+ 
      public function kodepos()
 	{
 		

@@ -1,5 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+ ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+define('MP_DB_DEBUG', true);  
 
 class Login extends CI_Controller {
 
@@ -200,9 +203,18 @@ class Login extends CI_Controller {
 	}
 	
     public function register_prsh() {
-		
-		  $data = $_POST['data'];;
-		  var_dump($data);
+	
+	$config['upload_path']   = './uploads/institusi/sk/'; 
+	$config['allowed_types'] = 'jpg|jpeg|png|gif'; 
+	$config['file_name'] = $new_name;
+    
+    $this->load->library('upload',$config); 
+      	
+   
+    if(!$this->upload->do_upload('sk_ojk')){ 
+	  $error = array('error' => $this->upload->display_errors());
+	  print_r($error);
+	}
 		
 	}
 	

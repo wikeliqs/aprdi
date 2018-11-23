@@ -121,6 +121,12 @@ class User_model extends CI_Model {
 		// echo $this->db->last_query();
         return $this->db->insert_id();
     }
+	
+	 public function register_prsh($data) {
+        $this->db->insert('type_pendaftaran', $data);
+		// echo $this->db->last_query();
+        return $this->db->insert_id();
+    }
 
     public function my_courses() {
         return $this->db->get_where('enroll', array('user_id' => $this->session->userdata('user_id')));

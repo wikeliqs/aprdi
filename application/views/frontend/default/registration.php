@@ -430,7 +430,7 @@
 	                    </div>	
 						
 	                     <div class="form-row">
-	                    	<label for="">
+	                    	<label for=""> 
 	                    		Chapta
 	                    	</label>
 	                    	<div class="form-holder">
@@ -546,10 +546,10 @@
 					 <section id="pribadi-3">
 	                    <div class="form-row">
 	                    	<label for="">
-	                    		Upload Pas Photo Berwarna
+	                    		Upload SK OJK
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="file" onchange="Photoprsh(this);" class="form-control cek2" required name="data[photo]" placeholder="">
+	                    		<input type="file" onchange="Photoprsh(this);" class="form-control cek2" required name="sk_ojk" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -655,8 +655,7 @@
 							</label>
 						</div> 	
 						</div> 	
-	                    
-							
+	                     
 	                    
 						  
 	                </section>
@@ -808,12 +807,13 @@ $(document).ready(function(){
     {
       if($(this).val()==1){
 		  // $('#section_personal').hide();
-		   
+			$(this).prop('checked', false);
 			 $('#wizard-pribadi').hide();
 			 $('#wizard-perusahaan').show();
 			 
 		  
-	  }else{
+	  }else{ 
+			$(this).prop('checked', false);
 			$('#wizard-pribadi').show();
 			$('#wizard-perusahaan').hide();
 			 
