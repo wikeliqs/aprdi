@@ -42,3 +42,53 @@ ERROR - 2018-11-22 10:44:56 --> 404 Page Not Found: Assets/frontend
 ERROR - 2018-11-22 10:45:27 --> 404 Page Not Found: Assets/frontend
 ERROR - 2018-11-22 10:45:27 --> 404 Page Not Found: Assets/frontend
 ERROR - 2018-11-22 10:45:28 --> 404 Page Not Found: Assets/frontend
+ERROR - 2018-11-22 11:47:55 --> 404 Page Not Found: Admin/quizmanagement
+ERROR - 2018-11-22 11:48:04 --> 404 Page Not Found: Admin/quizmanagement
+ERROR - 2018-11-22 11:48:12 --> Severity: error --> Exception: Call to a member function result_array() on null /home/vagrant/aprdi-e-learning/application/views/backend/quiz_management/index.php 30
+ERROR - 2018-11-22 11:48:42 --> 404 Page Not Found: Admin/quizmanagement
+ERROR - 2018-11-22 11:49:04 --> 404 Page Not Found: Admin/quizmanagement
+ERROR - 2018-11-22 11:49:37 --> 404 Page Not Found: Admins/quizmanagement
+ERROR - 2018-11-22 11:49:42 --> 404 Page Not Found: Admins/quizmanagement
+ERROR - 2018-11-22 11:50:09 --> 404 Page Not Found: Admins/quizmanagement
+ERROR - 2018-11-22 11:50:17 --> Severity: error --> Exception: Call to a member function result_array() on null /home/vagrant/aprdi-e-learning/application/views/backend/quiz_management/index.php 30
+ERROR - 2018-11-22 11:50:58 --> Severity: error --> Exception: Call to a member function result_array() on null /home/vagrant/aprdi-e-learning/application/views/backend/quiz_management/index.php 30
+ERROR - 2018-11-22 11:57:47 --> Severity: error --> Exception: Call to a member function result_array() on null /home/vagrant/aprdi-e-learning/application/views/backend/quiz_management/index.php 30
+ERROR - 2018-11-22 11:57:50 --> Severity: error --> Exception: Call to a member function result_array() on null /home/vagrant/aprdi-e-learning/application/views/backend/quiz_management/index.php 30
+ERROR - 2018-11-22 12:00:27 --> Severity: Warning --> Invalid argument supplied for foreach() /home/vagrant/aprdi-e-learning/application/views/frontend/default/registration.php 307
+ERROR - 2018-11-22 12:34:42 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:34:42 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:34:54 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:34:54 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:35:12 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:35:12 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:36:09 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:36:09 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:36:38 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:36:38 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:37:08 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:37:08 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:37:30 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:37:30 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:37:37 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:37:37 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:38:14 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:38:14 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:38:21 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:38:21 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:39:11 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:39:11 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:39:28 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:39:28 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:39:33 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:39:33 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:39:36 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:39:36 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:40:35 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:40:35 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:41:28 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:41:28 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:41:54 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:41:54 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:42:53 --> Severity: Warning --> include(admin/quiz_management/index.php): failed to open stream: No such file or directory /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:42:53 --> Severity: Warning --> include(): Failed opening 'admin/quiz_management/index.php' for inclusion (include_path='.:/usr/share/php') /home/vagrant/aprdi-e-learning/application/views/backend/index.php 28
+ERROR - 2018-11-22 12:48:44 --> Severity: error --> Exception: Call to a member function result_array() on null /home/vagrant/aprdi-e-learning/application/views/backend/admin/quiz_management/index.php 30
