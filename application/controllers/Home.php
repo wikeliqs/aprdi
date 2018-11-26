@@ -54,6 +54,12 @@ class Home extends CI_Controller {
         $this->load->view('frontend/default/index', $page_data);
     }
 
+    public function info() {
+        $page_data['page_name'] = "info";
+        $page_data['page_title'] = get_phrase('info');
+        $this->load->view('frontend/default/index', $page_data);
+    }
+
     public function shopping_cart() {
         if (!$this->session->userdata('cart_items')) {
             $this->session->set_userdata('cart_items', array());

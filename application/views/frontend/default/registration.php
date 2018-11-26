@@ -130,9 +130,23 @@
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<select name="data[pendidikan]" id="" required class="form-control step2">
-									<option value="canvas" class="option">SMA</option>
-									<option value="svg" class="option">D3</option>
-									<option value="svg" class="option">S1</option>
+									<option value="canvas" class="option" value="SMA">SMA</option>
+									<option value="svg" class="option" value="D3">D3</option>
+									<option value="svg" class="option" value="S1">S1</option>
+									<option value="svg" class="option" value="S2">S2</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+						 <div class="form-row">
+	                    	<label for="">
+	                    		Jenis ID
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="data[identitas]" id="" required class="form-control step2">
+									<option value="canvas" class="option" value="KTP">KTP</option>
+									<option value="svg" class="option" value="Passport">Passport</option>
+									 
 								</select>
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
@@ -162,10 +176,11 @@
 	                    	<div class="form-holder">
 	                    		<input type="text" name="data[nm_rdc]"   class="form-control ">
 	                    	</div>
-	                    </div-->	
+	                    </div-->
+						
 	                    <div class="form-row">
 	                    	<label for="">
-	                    		No. KTP
+	                    		No. ID
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input type="text" name="data[no_ktp]" required  class="form-control step2">
@@ -544,6 +559,14 @@
 					<!-- SECTION 8 -->
 					<h4></h4>
 					 <section id="pribadi-3">
+					 <div class="form-row">
+	                    	<label for="">
+	                    		No. SK OJK
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" name="data[no_sk_ojk]" name="telepon"   required class="form-control cek2"  >
+	                    	</div>
+	                    </div>	
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Upload SK OJK

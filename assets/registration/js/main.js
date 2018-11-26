@@ -45,7 +45,7 @@ function Photoprsh(input) {
             isSuccess = fileTypes.indexOf(extension) > -1;  //is extension in acceptable types
 			var fsize = input.files[0].size;
 			
-			alert(fsize);
+			// alert(fsize);
 			
 			if (isSuccess) {  
 				if(fsize<2000000){
@@ -85,7 +85,7 @@ function Ktp(input) {
             isSuccess = fileTypes.indexOf(extension) > -1;  //is extension in acceptable types
 			var fsize = input.files[0].size;
 			
-			alert(fsize);
+			// alert(fsize);
 			
 			if (isSuccess) {  
 				if(fsize<2000000){
@@ -125,7 +125,7 @@ function SK(input) {
             isSuccess = fileTypes.indexOf(extension) > -1;  //is extension in acceptable types
 			var fsize = input.files[0].size;
 			
-			alert(fsize);
+			// alert(fsize);
 			
 			if (isSuccess) {  
 				if(fsize<2000000){

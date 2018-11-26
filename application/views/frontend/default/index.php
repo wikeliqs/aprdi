@@ -22,13 +22,21 @@
 	}else {
 		include 'logged_out_header.php';
 	}  
+	
+	 
+	
 	// echo "<div class='wrap'>";
 	include $page_name.'.php';
 	// echo "</div>";
 	?>
 	
 	<?php
-	include 'footer.php';
+	
+	if(!$this->router->fetch_method()=='info'){
+		include 'footer.php';
+		
+	}
+	
 	include 'includes_bottom.php';
 	include 'modal.php';
 	?>

@@ -198,23 +198,84 @@ class Login extends CI_Controller {
 				'sess_logged_in'=>1
 				);
 			$this->session->set_userdata($session_data);
-			print_r($google_data['name']);
+			// print_r($google_data['name']);
 			// redirect(base_url());
 	}
 	
     public function register_prsh() {
 	
+	
+	$data = $this->input->post('data');
+	$user['email'] = $data['email'];
+	$user['password'] = sha1($data['password']);
+	$user['date_added'] = strtotime("now");
+	$user['first_name'] = $data['pic'];
+	 
+	$user['kd_verify'] = random_string('numeric', 6);
+		
+        $user['wishlist'] = json_encode(array()); 
+        $user['watch_history'] = json_encode(array());
+        $social_links = array(
+            'facebook' => "",
+            'twitter'  => "",
+            'linkedin' => ""
+        );
+        $user['social_links'] = json_encode($social_links);
+        $user['role_id']  = 3;
+	$validity = $this->user_model->check_duplication('on_create', $data['email']);	
+	 // echo $this->db->last_query();
+	if($validity){
+		
 	$config['upload_path']   = './uploads/institusi/sk/'; 
-	$config['allowed_types'] = 'jpg|jpeg|png|gif'; 
-	$config['file_name'] = $new_name;
-    
+	$config['allowed_types'] = 'jpg|jpeg'; 
+	   
+	$file_ext = pathinfo($_FILES['sk_ojk']['name'],PATHINFO_EXTENSION);
+	$config['file_name'] = $data['no_sk_ojk'].'.'.$file_ext ;
+   
     $this->load->library('upload',$config); 
+	$this->upload->overwrite = true;
       	
    
-    if(!$this->upload->do_upload('sk_ojk')){ 
-	  $error = array('error' => $this->upload->display_errors());
-	  print_r($error);
+    if($this->upload->do_upload('sk_ojk')){ 
+		$error = array('error' => $this->upload->display_errors());
+		$data_upload = $this->upload->data();
+		$user_id =  $this->user_model->register_user($user); 
+	  
+		$data['sk_ojk'] = $data_upload['file_name'];;
+		$data['email_pic'] = $data['email'];
+		if($user_id){
+				$mesg = $this->load->view('email/info_verification_prsh.php',$data,true);
+				$this->email_model->do_email($mesg, 'Email verification', $data['email']);
+				unset($data['email'],$data['password']);
+				$this->user_model->register_prsh($data); 
+				echo $this->db->last_query();
+				    $data['page_name'] = "info";
+					$data['page_title'] = get_phrase('info');
+					$this->load->view('frontend/default/index', $data);
+			 }
+		
+		
+	   	 
+			 
+			
 	}
+		
+		 
+			
+	// redirect(site_url('home/info'), 'refresh');	
+		 
+		
+	}else{
+		$this->session->set_flashdata('error_message', get_phrase('email_duplication'));
+	}
+	
+ 
+	
+		
+		
+	
+	
+		
 		
 	}
 	
@@ -222,8 +283,7 @@ class Login extends CI_Controller {
 		
 		  $data = $_REQUEST['data'];
 		 
-		  $user_id = $this->user_model->register_user($data);
-			 echo $this->db->last_query();
+		   
 		
          $data['first_name'] = html_escape($data['first_name']);
         $data['last_name']  = html_escape($data['first_name']);
@@ -266,7 +326,7 @@ class Login extends CI_Controller {
             'linkedin' => ""
         );
         $data['social_links'] = json_encode($social_links);
-        $data['role_id']  = 2;
+        $data['role_id']  = 3;
 		// var_dump($data);
 		$config_photo['upload_path']   = './uploads/user_image/photo/'; 
 		$config_ktp['upload_path']   = './uploads/user_image/ktp/'; 
@@ -342,7 +402,7 @@ class Login extends CI_Controller {
 			 
 			 
 			
-          /*   $this->session->set_userdata('user_login', '1');
+          /*  $this->session->set_userdata('user_login', '1');
             $this->session->set_userdata('user_id', $user_id);
             $this->session->set_userdata('role_id', 2);
             $this->session->set_userdata('role', get_user_role('user_role', 2));
