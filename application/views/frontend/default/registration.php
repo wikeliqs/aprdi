@@ -8,16 +8,39 @@
 
 		<!-- MATERIAL DESIGN ICONIC FONT -->
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/registration/fonts/material-design-iconic-font/css/material-design-iconic-font.css">
-
+			<link href="<?php echo base_url(); ?>assets/registration/vendor/bootstrap.min.css" rel="stylesheet"> 
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/registration/vendor/bootstrap-select.min.css" />
 		<!-- DATE-PICKER -->
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/registration/vendor/date-picker/css/datepicker.min.css">
 
 		<!-- STYLE CSS -->
 		
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/registration/css/style.css">
+	
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 	<body>
+	
+	<div class="form-row" style="margin-bottom: 26px;">
+	                    	<label for="">
+	                    		Nama Perusahaan
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="data[nm_perusahaan]" required id="type_pendaftaran" class="form-control step7 selectpicker" data-show-subtext="true" data-live-search="true" >
+									<option class='option'> Pilih Data </option>
+								<?php
+																						
+								foreach ($prsh_assets as $row)
+									{		sort($row);
+											echo "<option class='option' value='$row->id_type'>$row->nm_type</option>";
+									}
+								?>
+									<option class='option' value="other">Lainnya</option>
+								</select>
+								
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>
 		<div class="wrapper">
 			<div class="image-holder">
 				<img src="<?php echo base_url(); ?>assets/registration/images/form-wizard.png" alt="">
@@ -196,8 +219,8 @@
 	                    	<label for="">
 	                    		Upload Pas Photo Berwarna
 	                    	</label>
-	                    	<div class="form-holder">
-	                    		<input onchange="Photo(this);" type="file" required id="photo" name="data[photo]" class="form-control step3" placeholder="">
+	                    	<div class="form-holder ">
+	                    		<input onchange="Photo(this);" type="file" required id="photo" name="photo" class="form-control step3" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -218,7 +241,7 @@
 	                    		Upload KTP
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="file" onchange="Ktp(this);" id="ktp"   name="data[file_ktp]" required class="form-control step4" placeholder="">
+	                    		<input type="file" onchange="Ktp(this);" id="ktp"   name="file_ktp" required class="form-control step4" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -292,7 +315,7 @@
 	                    		SK Waperd
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="file" onchange="SK(this);" id="sk" name="data[sk_waperd] " required class="form-control step6" placeholder="">
+	                    		<input type="file" onchange="SK(this);" id="sk" name="sk_waperd" required class="form-control step6" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -310,20 +333,40 @@
 					 
 					 
 					<section  >
+						<div class="form-row" style="margin-bottom: 50px;">
+	                    	<label for="">
+	                    		Pekerjaan
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<div class="checkbox-circle">
+									<label class="male">
+										<input id="status_pekerjaan" type="radio"   value="0"  > Tidak Bekerja<br>
+										<span class="checkmark"></span>
+									</label>
+									<label class="female">
+										<input id="status_pekerjaan"  type="radio"  value="1"> Bekerja<br>
+										<span class="checkmark"></span>
+									</label>
+									 
+								</div>
+	                    	</div>
+	                    </div>
+					
 						<div class="form-row" style="margin-bottom: 26px;">
 	                    	<label for="">
 	                    		Nama Perusahaan
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<select name="data[nm_perusahaan]" required id="type_pendaftaran" class="form-control step7 selectpicker" data-live-search="true" >
+	                    		<select name="data[nm_perusahaan]" required id="type_pendaftaran" class="form-control step7 selectpicker" data-show-subtext="true" data-live-search="true" >
 									<option class='option'> Pilih Data </option>
 								<?php
 																						
 								foreach ($prsh_assets as $row)
-									{
+									{		sort($row);
 											echo "<option class='option' value='$row->id_type'>$row->nm_type</option>";
 									}
 								?>
+									<option class='option' value="other">Lainnya</option>
 								</select>
 								
 								<i class="zmdi zmdi-caret-down"></i>
@@ -697,7 +740,9 @@
 		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js"></script>
 
-
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+		
 		<!-- DATE-PICKER -->
 		
 		<script src="<?php echo base_url(); ?>assets/registration/vendor/date-picker/js/datepicker.js"></script>

@@ -128,6 +128,12 @@ class User_model extends CI_Model {
         return $this->db->insert_id();
     }
 
+	 public function user_profile($data) {
+        $this->db->insert('users_profile', $data);
+		// echo $this->db->last_query();
+        return $this->db->insert_id();
+    }
+
     public function my_courses() {
         return $this->db->get_where('enroll', array('user_id' => $this->session->userdata('user_id')));
     }

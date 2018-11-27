@@ -310,6 +310,7 @@ textarea.form-control {
   margin-top: 39px;
   justify-content: space-between; }
 .actions li a {
+  text-decoration: none;
   padding: 0;
   border: none;
   display: inline-flex;
