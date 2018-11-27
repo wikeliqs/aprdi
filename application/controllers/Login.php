@@ -207,11 +207,11 @@ class Login extends CI_Controller {
 	
 	$data = $this->input->post('data');
 	$user['email'] = $data['email'];
-	$user['password'] = sha1($data['password']);
+	$user['password'] = password_hash($data['password'],PASSWORD_DEFAULT);
 	$user['date_added'] = strtotime("now");
 	$user['first_name'] = $data['pic'];
 	 
-	$user['kd_verify'] = random_string('numeric', 6);
+	// $user['kd_verify'] = random_string('numeric', 6);
 		
         $user['wishlist'] = json_encode(array()); 
         $user['watch_history'] = json_encode(array());
@@ -281,142 +281,11 @@ class Login extends CI_Controller {
 	
     public function register() {
 		
-		  $data = $_REQUEST['data'];
+		 $data = $this->input->post('data');
 		 
-		   
-		
-         $data['first_name'] = html_escape($data['first_name']);
-        $data['last_name']  = html_escape($data['first_name']);
-        $data['kelamin']  = html_escape($data['first_name']);
-        $data['marital']  = html_escape($data['first_name']);
-        $data['tgl_lahir']  = html_escape($data['first_name']);
-        $data['pendidikan']  = html_escape($data['first_name']);
-        $data['id_pengenal']  = html_escape($data['first_name']);
-        $data['no_ktp']  = html_escape($data['first_name']);
-        $data['kwn']  = html_escape($data['first_name']);
-        $data['nm_rdc']  = html_escape($data['first_name']);
-        $data['tlp_perusahaan']  = html_escape($data['first_name']);
-        $data['kota_perusahaan']  = html_escape($data['first_name']);
-        $data['kode_pos_perusahaan']  = html_escape($data['first_name']);
-        $data['alamat_perusahaan']  = html_escape($data['first_name']);
-        $data['nm_prsh']  = html_escape($data['first_name']);
-        
-        $data['kabupaten']  = html_escape($data['first_name']);
-        $data['kecamatan']  = html_escape($data['first_name']);
-        $data['kelurahan']  = html_escape($data['first_name']);
-        $data['kode_pos']  = html_escape($data['first_name']);
-        $data['rtrw']  = html_escape($data['first_name']);
-        $data['alamat_rumah']  = html_escape($data['first_name']);
-       
-		$data['photo']  = html_escape($data['photo']);
-		$data['file_ktp']  = html_escape($data['file_ktp']);
-		 // move_uploaded_file($_FILES['logo']['tmp_name'], 'uploads/user_image/logo.png');
-		
-		
-        $data['rdc']  = html_escape($this->input->post('course'));
-        $data['email']  = html_escape($this->input->post('email'));
-        $data['password']  = sha1($this->input->post('password'));
-		$data['kd_verify'] = random_string('numeric', 6);
-		
-        $data['wishlist'] = json_encode(array()); 
-        $data['watch_history'] = json_encode(array());
-        $social_links = array(
-            'facebook' => "",
-            'twitter'  => "",
-            'linkedin' => ""
-        );
-        $data['social_links'] = json_encode($social_links);
-        $data['role_id']  = 3;
-		// var_dump($data);
-		$config_photo['upload_path']   = './uploads/user_image/photo/'; 
-		$config_ktp['upload_path']   = './uploads/user_image/ktp/'; 
-		$config_photo['allowed_types'] = 'gif|jpg|png'; 
-		$config_ktp['allowed_types'] = 'gif|jpg|png'; 
-		// $config['max_size']      = 1024;
-		$config_photo['encrypt_name'] = TRUE;
-		$config_ktp['encrypt_name'] = TRUE;
-		$this->load->library('upload', $config_photo);
-		$this->load->library('upload', $config_ktp);  
-     
-	  
-				// $mesg = $this->load->view('email/verification.php',$data,true);
-				// $this->email_model->do_email($mesg, 'Email verification', $data['email']);
-		// var_dump($data);
-        $validity = $this->user_model->check_duplication('on_create', $data['email']);
-	 
-        if ($validity) {
+		 print_r( $data);
 		 
 		 
-				  
-			$this->upload->initialize($config_photo);
-			
-			 if ($this->upload->do_upload($data['photo'])) {
-				
-				
-
-				$data_upload = $this->upload->data();
-				$data['photo'] = $data_upload['file_name'];
-                $this->image_lib->initialize(array(
-                    'image_library' => 'gd2',
-                    'source_image' => './uploads/user_image/photo/'. $data_upload['file_name'],
-                    'maintain_ratio' => false,
-                    'create_thumb' => true,
-                    'quality' => '80%',
-					'width' => 150 
-                ));
-				$this->image_lib->resize();
-			
-
-			}
-			
-			$this->upload->initialize($config_ktp);
-			 if ($this->upload->do_upload('file_ktp')) {
-				
-				
-
-				$data_upload_ktp = $this->upload->data();
-				$data['file_ktp'] = $data_upload_ktp['file_name'];
-                $this->image_lib->initialize(array(
-                    'image_library' => 'gd2',
-                    'source_image' => './uploads/user_image/ktp/'. $data_upload_ktp['file_name'],
-                    'maintain_ratio' => false,
-                    'create_thumb' => true,
-					'quality' => '80%',
-					'width' => 150
-                ));
-				$this->image_lib->resize();
-			
-
-			}
-			  
-		  
-             $user_id = $this->user_model->register_user($data);
-			 
-			 if($user_id){
-				$mesg = $this->load->view('email/verification.php',$data,true);
-				$this->email_model->do_email($mesg, 'Email verification', $data['email']);
-				 $data['page_name'] = "confirmation";
-				 $data['page_title'] = get_phrase('confirmation');
-				 $this->load->view('frontend/default/index.php',$data);
-			 }
-			 
-			 
-			
-          /*  $this->session->set_userdata('user_login', '1');
-            $this->session->set_userdata('user_id', $user_id);
-            $this->session->set_userdata('role_id', 2);
-            $this->session->set_userdata('role', get_user_role('user_role', 2));
-            $this->session->set_userdata('name', $data['first_name'].' '.$data['last_name']);
-            $this->session->set_flashdata('flash_message', get_phrase('your_registration_has_been_successfully_done')); */
-        }else {
-			 
-            $this->session->set_flashdata('error_message', get_phrase('email_duplication'));
-        }
-		
-		
-        // redirect(site_url('home'), 'refresh');
-		
-		
 		
 		
 		

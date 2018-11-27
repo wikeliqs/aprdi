@@ -31,11 +31,9 @@
 	?>
 	
 	<?php
+	 
 	
-	if(!$this->router->fetch_method()=='info'){
-		include 'footer.php';
-		
-	}
+	include 'footer.php';
 	
 	include 'includes_bottom.php';
 	include 'modal.php';

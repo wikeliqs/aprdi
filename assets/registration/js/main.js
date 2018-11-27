@@ -333,7 +333,9 @@ lanjut = false;
             next: "Continue",
             previous: "Back"
         },onFinished: function (event, currentIndex) {
-			 var lanjut = true;
+			
+var	form = $("#wizard-pribadi ").submit();
+		/* 	var lanjut = true;
  $('.step'+currentIndex).each(function() {
 	 
 	if(!validator.element(this)){
@@ -345,7 +347,7 @@ lanjut = false;
 	 
  });
 	
-return lanjut;
+return lanjut; */
 }
     });
 	

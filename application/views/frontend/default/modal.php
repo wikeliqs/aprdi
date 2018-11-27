@@ -1,6 +1,8 @@
 <script type="text/javascript">
 function showAjaxModal(url)
 {
+	
+	alert(url);
 // SHOWING AJAX PRELOADER IMAGE
 jQuery('#modal_ajax .modal-body').html('<div style="text-align:center;margin-top:200px;"><img src="assets/images/preloader.gif" /></div>');
 

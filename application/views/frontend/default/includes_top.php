@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
-<script src="<?php echo base_url().'assets/frontend/js/vendor/jquery-3.2.1.min.js'; ?>"></script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.3/css/bootstrap-select.min.css">
 <link rel="stylesheet" href="<?php echo base_url().'assets/frontend/css/main.css'; ?>">
 
