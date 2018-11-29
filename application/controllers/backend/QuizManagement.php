@@ -15,9 +15,19 @@ class QuizManagement extends CI_Controller
 	
 	public function index()
 	{
-		$page_data['page_name'] = 'quiz_management/index';
+		$page_data['page_name']  = 'quiz_management/index';
 		$page_data['page_title'] = get_phrase('Quiz');
 		
 		return view('backend.admin.quiz_management.index', $page_data);
 	}
+	
+	public function create()
+	{
+		$page_data['page_name']  = 'quiz_management/index';
+		$page_data['page_title'] = get_phrase('add_new_quiz');
+		
+		return view('backend.admin.quiz_management.create', $page_data);
+	}
+	
+	
 }

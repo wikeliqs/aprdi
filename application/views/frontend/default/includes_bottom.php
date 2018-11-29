@@ -24,7 +24,7 @@
  
 
 
-/* 
+/**
 function confirmation() {
 	var allcode = $('#code1').val()  + $('#code2').val() + $('#code3').val() + $('#code4').val() + $('#code5').val() +  $('#code6').val();
 	var nm_email = $('#email').text();	
