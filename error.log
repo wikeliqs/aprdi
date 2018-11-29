@@ -41,3 +41,60 @@
 [Tue Nov 27 11:04:27.081165 2018] [authz_core:error] [pid 2917] [client 115.85.75.3:63326] AH01630: client denied by server configuration: /home/e_aprdi/public_html/assets/registration/images/form-wizard.png
 [Tue Nov 27 11:04:27.188881 2018] [authz_core:error] [pid 2917] [client 115.85.75.3:63326] AH01630: client denied by server configuration: /home/e_aprdi/public_html/assets/registration/images/form-wizard.png
 [Tue Nov 27 11:04:27.320721 2018] [authz_core:error] [pid 2917] [client 115.85.75.3:63326] AH01630: client denied by server configuration: /home/e_aprdi/public_html/assets/registration/images/form-wizard.png
+[Wed Nov 28 07:43:54.963279 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59118] PHP ArgumentCountError:  Too few arguments to function Crud_model::get_perusahaan(), 0 passed in /home/e_aprdi/public_html/application/controllers/Signup.php on line 65 and exactly 1 expected in /home/e_aprdi/public_html/application/models/Crud_model.php on line 761
+[Wed Nov 28 07:43:54.963335 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59118] PHP Stack trace:
+[Wed Nov 28 07:43:54.963340 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59118] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 07:43:54.963345 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59118] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315
+[Wed Nov 28 07:43:54.963350 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59118] PHP   3. Signup->js_perusahaan() /home/e_aprdi/public_html/system/core/CodeIgniter.php:532
+[Wed Nov 28 07:43:54.963355 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59118] PHP   4. Crud_model->get_perusahaan() /home/e_aprdi/public_html/application/controllers/Signup.php:65
+[Wed Nov 28 07:57:22.689465 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59541] PHP Error:  Call to undefined method mysqli::nm_type() in /home/e_aprdi/public_html/application/controllers/Signup.php on line 74
+[Wed Nov 28 07:57:22.689522 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59541] PHP Stack trace:
+[Wed Nov 28 07:57:22.689528 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59541] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 07:57:22.689532 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59541] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315
+[Wed Nov 28 07:57:22.689537 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59541] PHP   3. Signup->js_perusahaan() /home/e_aprdi/public_html/system/core/CodeIgniter.php:532
+[Wed Nov 28 07:57:42.078390 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59555] PHP Error:  Call to undefined method mysqli::nm_type() in /home/e_aprdi/public_html/application/controllers/Signup.php on line 74
+[Wed Nov 28 07:57:42.078443 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59555] PHP Stack trace:
+[Wed Nov 28 07:57:42.078450 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59555] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 07:57:42.078455 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59555] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315
+[Wed Nov 28 07:57:42.078460 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59555] PHP   3. Signup->js_perusahaan() /home/e_aprdi/public_html/system/core/CodeIgniter.php:532
+[Wed Nov 28 07:59:44.676613 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59605] PHP Error:  Call to a member function nm_type() on string in /home/e_aprdi/public_html/application/controllers/Signup.php on line 74
+[Wed Nov 28 07:59:44.676665 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59605] PHP Stack trace:
+[Wed Nov 28 07:59:44.676676 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59605] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 07:59:44.676695 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59605] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315
+[Wed Nov 28 07:59:44.676700 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59605] PHP   3. Signup->js_perusahaan() /home/e_aprdi/public_html/system/core/CodeIgniter.php:532
+[Wed Nov 28 07:59:59.045173 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59615] PHP Error:  Call to a member function nm_type() on string in /home/e_aprdi/public_html/application/controllers/Signup.php on line 74
+[Wed Nov 28 07:59:59.045223 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59615] PHP Stack trace:
+[Wed Nov 28 07:59:59.045229 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59615] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 07:59:59.045233 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59615] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315
+[Wed Nov 28 07:59:59.045480 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59615] PHP   3. Signup->js_perusahaan() /home/e_aprdi/public_html/system/core/CodeIgniter.php:532
+[Wed Nov 28 08:00:10.429570 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59617] PHP Error:  Call to a member function nm_type() on string in /home/e_aprdi/public_html/application/controllers/Signup.php on line 74
+[Wed Nov 28 08:00:10.429616 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59617] PHP Stack trace:
+[Wed Nov 28 08:00:10.429621 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59617] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 08:00:10.429625 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59617] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315
+[Wed Nov 28 08:00:10.429630 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59617] PHP   3. Signup->js_perusahaan() /home/e_aprdi/public_html/system/core/CodeIgniter.php:532
+[Wed Nov 28 08:00:17.022963 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59619] PHP Error:  Call to a member function nm_type() on string in /home/e_aprdi/public_html/application/controllers/Signup.php on line 74
+[Wed Nov 28 08:00:17.023009 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59619] PHP Stack trace:
+[Wed Nov 28 08:00:17.023015 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59619] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 08:00:17.023020 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59619] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315
+[Wed Nov 28 08:00:17.023025 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59619] PHP   3. Signup->js_perusahaan() /home/e_aprdi/public_html/system/core/CodeIgniter.php:532
+[Wed Nov 28 08:01:01.222187 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59640] PHP ParseError:  syntax error, unexpected 'echo' (T_ECHO), expecting function (T_FUNCTION) or const (T_CONST) in /home/e_aprdi/public_html/application/controllers/Signup.php on line 74
+[Wed Nov 28 08:01:01.222226 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59640] PHP Stack trace:
+[Wed Nov 28 08:01:01.222247 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59640] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 08:01:01.222252 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59640] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315
+[Wed Nov 28 08:01:06.154502 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59642] PHP ParseError:  syntax error, unexpected 'echo' (T_ECHO), expecting function (T_FUNCTION) or const (T_CONST) in /home/e_aprdi/public_html/application/controllers/Signup.php on line 74
+[Wed Nov 28 08:01:06.154547 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59642] PHP Stack trace:
+[Wed Nov 28 08:01:06.154553 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59642] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 08:01:06.154558 2018] [php7:notice] [pid 19899] [client 115.85.75.3:59642] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315
+[Wed Nov 28 08:01:15.439227 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59646] PHP ParseError:  syntax error, unexpected 'echo' (T_ECHO), expecting function (T_FUNCTION) or const (T_CONST) in /home/e_aprdi/public_html/application/controllers/Signup.php on line 74
+[Wed Nov 28 08:01:15.439289 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59646] PHP Stack trace:
+[Wed Nov 28 08:01:15.439295 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59646] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 08:01:15.439299 2018] [php7:notice] [pid 19901] [client 115.85.75.3:59646] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315
+[Wed Nov 28 08:01:26.571132 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59652] PHP Error:  Call to a member function nm_type() on string in /home/e_aprdi/public_html/application/controllers/Signup.php on line 74
+[Wed Nov 28 08:01:26.571186 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59652] PHP Stack trace:
+[Wed Nov 28 08:01:26.571191 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59652] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 08:01:26.571195 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59652] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315
+[Wed Nov 28 08:01:26.571199 2018] [php7:notice] [pid 20009] [client 115.85.75.3:59652] PHP   3. Signup->js_perusahaan() /home/e_aprdi/public_html/system/core/CodeIgniter.php:532
+[Wed Nov 28 08:04:29.644246 2018] [php7:notice] [pid 19902] [client 115.85.75.3:59727] PHP ParseError:  syntax error, unexpected ''id_type'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/e_aprdi/public_html/application/controllers/Signup.php on line 72
+[Wed Nov 28 08:04:29.644287 2018] [php7:notice] [pid 19902] [client 115.85.75.3:59727] PHP Stack trace:
+[Wed Nov 28 08:04:29.644292 2018] [php7:notice] [pid 19902] [client 115.85.75.3:59727] PHP   1. {main}() /home/e_aprdi/public_html/index.php:0
+[Wed Nov 28 08:04:29.644297 2018] [php7:notice] [pid 19902] [client 115.85.75.3:59727] PHP   2. require_once() /home/e_aprdi/public_html/index.php:315

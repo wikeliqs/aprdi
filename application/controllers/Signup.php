@@ -57,4 +57,41 @@ class Signup extends CI_Controller {
 		 
 		
 	}
+	
+	 public function js_perusahaan()
+	{
+		
+		 
+		$perusahaan = $this->crud_model->perusahaan();
+		  $result = array();
+    foreach($perusahaan->result() as $item){
+        $data = array(
+             'id_type'  =>  $item->id_type,
+             'nm_type'  =>  $item->nm_type,
+         );
+         array_push($result,$data);
+		 
+		 
+    }                
+    echo json_encode($result);
+		
+		
+		/* $result = array();
+    foreach($perusahaan->result() as $item){
+		// $result[] = $item->nm_type;
+		$data = array(
+             'id'    =>    "1",
+             'name'  =>  $item['nm_type']
+         );
+         array_push($result,$data);
+		
+    }  
+			
+			
+		   echo json_encode($result);
+		  */
+		
+	}
+	
+	
 }

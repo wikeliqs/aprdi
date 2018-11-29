@@ -269,13 +269,7 @@ class Login extends CI_Controller {
 		$this->session->set_flashdata('error_message', get_phrase('email_duplication'));
 	}
 	
- 
-	
-		
-		
-	
-	
-		
+  
 		
 	}
 	
@@ -292,7 +286,7 @@ class Login extends CI_Controller {
 		$data['kd_verify'] = $user['kd_verify'];
 		
 		
-		print_r($data); exit;
+		
 		
         $user['wishlist'] = json_encode(array()); 
         $user['watch_history'] = json_encode(array());
@@ -319,7 +313,7 @@ class Login extends CI_Controller {
 				// $this->email_model->do_email($mesg, 'Email verification', $data['email']);
 		// var_dump($data);
         $validity = $this->user_model->check_duplication('on_create', $data['email']);
-	 
+		print_r($data); exit;
         if ($validity) {
 		 
 		
@@ -332,7 +326,12 @@ class Login extends CI_Controller {
 				 
 
 				$data_upload = $this->upload->data();
+				
+				$file_ext = pathinfo($_FILES['photo']['name'],PATHINFO_EXTENSION);
+				$config['file_name'] = $data['no_ktp'].'.'.$file_ext ;
 			 	$data['photo'] = $data_upload['file_name'];
+				
+				
                 $this->image_lib->initialize(array(
                     'image_library' => 'gd2',
                     'source_image' => './uploads/user_image/photo/'. $data_upload['file_name'],

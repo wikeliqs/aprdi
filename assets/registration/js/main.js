@@ -188,7 +188,7 @@ $(function(){
             } else {
                 error.insertAfter(element).wrap('<div/>');
             }
-        },
+        },ignore: ':hidden',
 	
 });
 

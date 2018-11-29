@@ -8,7 +8,7 @@
 
 		<!-- MATERIAL DESIGN ICONIC FONT -->
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/registration/fonts/material-design-iconic-font/css/material-design-iconic-font.css">
-			<link href="<?php echo base_url(); ?>assets/registration/vendor/bootstrap.min.css" rel="stylesheet"> 
+		 <link href="<?php echo base_url(); ?>assets/registration/vendor/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/registration/vendor/bootstrap-select.min.css" />
 		<!-- DATE-PICKER -->
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/registration/vendor/date-picker/css/datepicker.min.css">
@@ -16,31 +16,13 @@
 		<!-- STYLE CSS -->
 		
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/registration/css/style.css">
-	
-		<script src='https://www.google.com/recaptcha/api.js'></script>
+	 
 	</head>
 	<body>
 	
-	<div class="form-row" style="margin-bottom: 26px;">
-	                    	<label for="">
-	                    		Nama Perusahaan
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<select name="data[nm_perusahaan]" required id="type_pendaftaran" class="form-control step7 selectpicker" data-show-subtext="true" data-live-search="true" >
-									<option class='option'> Pilih Data </option>
-								<?php
-																						
-								foreach ($prsh_assets as $row)
-									{		sort($row);
-											echo "<option class='option' value='$row->id_type'>$row->nm_type</option>";
-									}
-								?>
-									<option class='option' value="other">Lainnya</option>
-								</select>
-								
-								<i class="zmdi zmdi-caret-down"></i>
-	                    	</div>
-	                    </div>
+	
+
+	
 		<div class="wrapper">
 			<div class="image-holder">
 				<img src="<?php echo base_url(); ?>assets/registration/images/form-wizard.png" alt="">
@@ -104,11 +86,11 @@
 	                    	<div class="form-holder">
 	                    		<div class="checkbox-circle" required>
 									<label class="male">
-										<input type="radio" name="data[kelamin]" id="kelamin"  required   class="step1" value="male"  > Laki-Laki<br>
+										<input type="radio" name="data[kelamin]" id="kelamin"  required   class="step1" value="L"  > Laki-Laki<br>
 										<span class="checkmark"></span>
 									</label>
 									<label class="female">
-										<input type="radio" name="data[kelamin]" id="kelamin"  required class="step1" value="female"> Perempuan<br>
+										<input type="radio" name="data[kelamin]" id="kelamin"  required class="step1" value="P"> Perempuan<br>
 										<span class="checkmark"></span>
 									</label>
 								
@@ -122,11 +104,11 @@
 	                    	<div class="form-holder">
 	                    		<div class="checkbox-circle">
 									<label class="male" >
-										<input type="radio" name="data[marital]" id="marital" required  class="step1" value="male"  > Kawin<br>
+										<input type="radio" name="data[marital]" id="marital" required  class="step1" value="kawin"  > Kawin<br>
 										<span class="checkmark"></span>
 									</label>
 									<label class="female">
-										<input type="radio" name="data[marital]" id="marital"  required  class="step1" value="female"> Belum Kawin<br>
+										<input type="radio" name="data[marital]" id="marital"  required  class="step1" value="belum kawin"> Belum Kawin<br>
 										<span class="checkmark"></span>
 									</label>
 									 
@@ -153,10 +135,10 @@
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<select name="data[pendidikan]" id="" required class="form-control step2">
-									<option value="canvas" class="option" value="SMA">SMA</option>
-									<option value="svg" class="option" value="D3">D3</option>
-									<option value="svg" class="option" value="S1">S1</option>
-									<option value="svg" class="option" value="S2">S2</option>
+									<option   class="option" value="SMA">SMA</option>
+									<option  class="option" value="D3">D3</option>
+									<option   class="option" value="S1">S1</option>
+									<option  class="option" value="S2">S2</option>
 								</select>
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
@@ -219,7 +201,7 @@
 	                    	<label for="">
 	                    		Upload Pas Photo Berwarna
 	                    	</label>
-	                    	<div class="form-holder ">
+	                    	<div class="form-holder">
 	                    		<input onchange="Photo(this);" type="file" required id="photo" name="photo" class="form-control step3" placeholder="">
 	                    	</div>
 	                    </div>	
@@ -333,31 +315,30 @@
 					 
 					 
 					<section  >
-						<div class="form-row" style="margin-bottom: 50px;">
+						 
+						<div class="form-row" style="margin-bottom: 26px;">
 	                    	<label for="">
-	                    		Pekerjaan
+	                    		Status Pekerjaan
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<div class="checkbox-circle">
-									<label class="male">
-										<input id="status_pekerjaan" type="radio"   value="0"  > Tidak Bekerja<br>
-										<span class="checkmark"></span>
-									</label>
-									<label class="female">
-										<input id="status_pekerjaan"  type="radio"  value="1"> Bekerja<br>
-										<span class="checkmark"></span>
-									</label>
-									 
-								</div>
+	                    		<select name="data[status_pekerjaan]"   id="status_pekerjaan" class="form-control   selectpicker" data-show-subtext="true" data-live-search="true" >
+									<option class='option' value="0"> Tidak Bekerja </option>
+								 
+									<option class='option' value="1">Bekerja</option>
+								</select>
+								
+								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
-	                    </div>
-					
-						<div class="form-row" style="margin-bottom: 26px;">
+	                    </div>	
+						
+						<div id="form_kerja" style="display:none">
+						
+							<div class="form-row" style="margin-bottom: 26px;">
 	                    	<label for="">
 	                    		Nama Perusahaan
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<select name="data[nm_perusahaan]" required id="type_pendaftaran" class="form-control step7 selectpicker" data-show-subtext="true" data-live-search="true" >
+	                    		<select name="data[nm_perusahaan]" required id="type_pendaftaran" class="form-control   selectpicker" data-show-subtext="true" data-live-search="true" >
 									<option class='option'> Pilih Data </option>
 								<?php
 																						
@@ -372,13 +353,20 @@
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
 	                    </div>	
-	                    
+	                     <div class="form-row input-prsh" style="display:none">
+	                    	<label for="">
+	                    		 
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" id="nm_perusahaan" required  class="form-control step7" name="data[pekerjaan_lainnya]"   placeholder="">
+	                    	</div>
+	                    </div>
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Nama Gedung
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" id="nm_gedung" required class="form-control step7" name="data[alamat_perusahaan]" value="000/000" placeholder="">
+	                    		<input type="text" id="nm_gedung" required  class="form-control step7" name="data[alamat_perusahaan]" value="000/000" placeholder="">
 	                    	</div>
 	                    </div>	
                      	<div class="form-row">
@@ -386,7 +374,7 @@
 	                    		Lantai 
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" id="lantai" required class="form-control step7" name="data[nm_perusahaan]" placeholder="">
+	                    		<input type="text" id="lantai" required  class="form-control step7" name="data[nm_perusahaan]" placeholder="">
 	                    	</div>
 	                    </div>
 						<div class="form-row">
@@ -394,7 +382,7 @@
 	                    		Jalan 
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" id="alamat" required class="form-control step7" name="data[alamat_perusahaan]" placeholder="">
+	                    		<input type="text" id="alamat" required  class="form-control step7" name="data[alamat_perusahaan]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -402,7 +390,7 @@
 	                    		Kode Pos 
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" id="kd_pos" required class="form-control step7" name="data[kode_pos_perusahaan]" placeholder="">
+	                    		<input type="text" id="kd_pos"  required class="form-control step7" name="data[kode_pos_perusahaan]" placeholder="">
 	                    	</div>
 	                    </div>	
 	                    <div class="form-row">
@@ -413,7 +401,9 @@
 	                    		<input type="text" id="kabupaten_prsh" required class="form-control step7" name="data[kota_perusahaan]" placeholder="">
 	                    	</div>
 	                    </div>	
-	                     
+							
+						
+	                     </div>
 	                </section>
 					<!-- SECTION 8 -->
 					<h4></h4>
@@ -434,7 +424,7 @@
 	                    	<div class="form-holder">
 	                    		<input type="text" class="form-control step8" required name="data[fax_perusahaan]" placeholder="">
 	                    	</div>
-	                    </div>	
+	                    </div>
                      	<div class="form-row">
 	                    	<label for="">
 	                    		 Handphone
@@ -730,25 +720,26 @@
 			
 		</div>
 		<div id="wait" class="container col-sm-6 col-sm-offset-3" style="display:none;position: fixed;z-index: 999;height: 2em;width: 15em;overflow: show;margin: auto;top: 0;left: 0;bottom: 0;right: 0;" ><img class="img-responsive" src='<?php echo base_url().'assets/loader.gif'; ?>' style="float: none;margin: 0 auto;" /></div>
-
+ 
 		<script src="<?php echo base_url(); ?>assets/registration/js/jquery-latest.min.js" type="text/javascript"></script>
 		<script src="<?php echo base_url(); ?>assets/registration/js/jquery-3.3.1.min.js"></script>
-		
+		<script src="<?php echo base_url(); ?>assets/registration/js/bootstrap.min.js"></script>
 		<!-- JQUERY STEP -->
 		<script src="<?php echo base_url(); ?>assets/registration/js/jquery.steps.js"></script>
-		<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
-		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js"></script>
-
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/registration/js/jquery.validate.js"></script>
+		<script src="<?php echo base_url(); ?>assets/registration/js/additional-methods.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/registration/js/jquery.inputmask.bundle.js"></script>
+		<script src="<?php echo base_url(); ?>assets/registration/js/bootstrap-select.min.js"></script>
 		
+		
+
 		<!-- DATE-PICKER -->
 		
 		<script src="<?php echo base_url(); ?>assets/registration/vendor/date-picker/js/datepicker.js"></script>
 		<script src="<?php echo base_url(); ?>assets/registration/vendor/date-picker/js/datepicker.en.js"></script>
 
 		<script src="<?php echo base_url(); ?>assets/registration/js/main.js"></script>
+		
 <!-- Template created and distributed by Colorlib -->
 </body>
 </html>
@@ -831,8 +822,14 @@ $(document).ready(function(){
 	 
 	
   $("select#type_pendaftaran").change(function () {
-	  
-	       // alert(this.value);
+	  if(this.value=="other"){
+		  
+		 
+		  $(".input-prsh").show();
+		  
+		  
+	  }else{
+	       $(".input-prsh").hide();
        $.ajax({
             url: '<?php echo site_url('signup/perusahaan');?>',
             type : 'POST',
@@ -862,7 +859,7 @@ $(document).ready(function(){
         }); 
 	  
 	  
-	  
+	  }
 	  
 	});  
 	  
@@ -870,6 +867,14 @@ $(document).ready(function(){
 	  
 	  
 
+  $("select#status_pekerjaan").change(function () {
+	  if(this.value==1){
+	  $("#form_kerja").show();
+	  }else{
+		$("#form_kerja").hide();  
+	  }
+	 });  
+	  
   $("input#tipe_daftar").change(function () {
      if ($(this).is(':checked'))
     {
@@ -891,7 +896,134 @@ $(document).ready(function(){
   });
 });
  
+  
+/* $.getJSON('http://aprdi.ticmi.co.id/signup/perusahaan/', function(data) {
+   
+  var myJSON = JSON.stringify(data);
+  parsedData = JSON.parse(myJSON);
+  alert(data);
+}); */
 
  
+
+
+
+function get_json(url) {
+    http.get(url, function(res) {
+        var body = '';
+        res.on('data', function(chunk) {
+            body += chunk;
+        });
+
+        res.on('end', function() {
+            var response = JSON.parse(body);
+			alert(response);
+        });
+    });
+	
+}
+
+var url = 'http://aprdi.ticmi.co.id/signup/js_perusahaan/';
+get_json(url);
+
+
+ function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+
  
 </script>
